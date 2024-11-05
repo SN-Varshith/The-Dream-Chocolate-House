@@ -25,7 +25,8 @@ The Fictional Chocolate House project is a Python application designed to manage
 1. Clone the repository:
    ```bash
    git clone https://github.com/SN-Varshith/The-Dream-Chocolate-House.git
-   cd chocolate_house
+   
+   cd The-Dream-Chocolate-House
 
 2. Install required packages:
    pip install django
