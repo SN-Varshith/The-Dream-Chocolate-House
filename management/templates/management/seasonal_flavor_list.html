@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Seasonal Flavors</title>
+</head>
+<body>
+    <h1>Seasonal Flavors</h1>
+  
+    <a href="{% url 'add_seasonal_flavor' %}">Add New Flavor</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+    <a href="{% url 'home' %}">Home</a> 
+
+    <ol>
+        {% for flavor in flavors %}
+            <li>
+                <strong>{{ flavor.name }}:</strong> {{ flavor.description }}<br>
+                 Available from <strong>{{ flavor.availability_start }}</strong> to <strong> {{ flavor.availability_end }} </strong>
+                for <strong>Rs.{{ flavor.price }}</strong> <br>
+                (Season: {{ flavor.season }}, Currently available:<strong> {{ flavor.is_available|yesno:"Yes,No" }}</strong>)
+            </li><br>
+        {% endfor %}
+    </ol>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Customer Suggestions</title>
+</head>
+<body>
+    <h1>Customer Suggestions</h1>
+    <a href="{% url 'add_customer_suggestion' %}">Add New Suggestion</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+    <a href="{% url 'home' %}">Home</a> 
+
+    <ul>
+        {% for suggestion in suggestions %}
+            <li class="suggestion-item">
+                <strong>Customer Name:</strong> {{ suggestion.customer_name }}<br>
+                <strong>Suggested Flavor:</strong> {{ suggestion.flavor_suggestion }}<br>
+                <strong>Allergy Concern:</strong> {{ suggestion.allergy_concerns }}<br>
+                <strong>Submitted On:</strong> {{ suggestion.submitted_on|date:"F j, Y" }}
+            </li><br>
+        {% empty %}
+            <li>No suggestions available.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

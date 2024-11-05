@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Seasonal Flavor</title>
+    <style>
+        .errorlist {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Add Seasonal Flavor</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Add Flavor</button>
+    </form><br>
+    <a href="{% url 'seasonal_flavor_list' %}">Back to Flavor List</a>
+</body>
+</html>

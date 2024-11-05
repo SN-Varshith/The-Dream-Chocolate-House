@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Customer Suggestion</title>
+</head>
+<body>
+    <h1>Add Customer Suggestion</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit Suggestion</button>
+    </form><br>
+    <a href="{% url 'customer_suggestion_list' %}">Back to Suggestions List</a>
+</body>
+</html>

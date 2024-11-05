@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ingredients</title>
+</head>
+<body>
+    <h1>Ingredients</h1>
+    <a href="{% url 'add_ingredient' %}">Add New Ingredient</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+    <a href="{% url 'home' %}">Home</a> 
+
+    <ol>
+        {% for ingredient in ingredients %}
+        <li>
+            <strong>{{ ingredient.ingredient_name }}</strong>: 
+            We have <strong>{{ ingredient.quantity_in_stock }}</strong> 
+            {{ ingredient.unit }} in stock.
+            <br>
+            Last updated on: <strong>{{ ingredient.last_updated|date:"F j, Y" }}</strong>
+        </li><br>
+    {% endfor %}
+    </ol>
+</body>
+</html>
