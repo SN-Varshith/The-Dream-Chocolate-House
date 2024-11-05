@@ -215,6 +215,13 @@ flavors = SeasonalFlavor.objects.filter(is_available=True)
 for flavor in flavors:
     print(flavor.name)
 
+Accessing the Django Admin Page
+After starting the server, you can access the admin page at http://127.0.0.1:8000/admin/
+
+Log in using the credentials:
+username: admin_L7_informatics
+Password: L7informatics@123
+
 
 ## Docker-based Build and Run
 
